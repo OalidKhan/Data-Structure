@@ -11,6 +11,7 @@ int main()
 
     for(int i=0 ; i<size-1 ; i++)
     {
+        int flag = 1;
         for(int j=0 ; j<size-1-i ; j++)
         {
             if(arr[j]>arr[j+1])
@@ -18,7 +19,11 @@ int main()
                 int temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
+                flag = 0;
             }
+        }
+        if(flag != 0){
+            break;
         }
     }
 
@@ -26,7 +31,7 @@ int main()
     {
         printf("%d ",arr[i]);
     }
-
-  return 0;
+    
+    return 0;
 }
 
